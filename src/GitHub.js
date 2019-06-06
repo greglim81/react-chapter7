@@ -42,15 +42,18 @@ class GitHub extends Component {
     render() {  
         const listUsers = this.state.data.map((user) =>             
             <Media key={user.id}>
-            <Media.Left>
-                <a href={user.html_url}>
-                    <img width={64} height={64} src={user.avatar_url} alt="Image"/>
-                </a>
-            </Media.Left>
-            <Media.Body>
-                <Media.Heading>{user.login}</Media.Heading>
+              <img 
+                width={64} 
+                height={64} 
+                className="mr-3"
+                src={ user.avatar_url } 
+                alt="Image"
+              />
+
+              <Media.Body>
+                <h5>{user.login}</h5>
                 <p>Score: { user.score }</p>
-            </Media.Body>
+              </Media.Body>
             </Media>          
         );        
         
